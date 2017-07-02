@@ -1,0 +1,43 @@
+.link-nav(){
+  color: @black;
+  &:hover{
+    color: @blue;
+  }
+  &:active{
+    color: @black-transparent;
+  }
+}
+.active-nav(){
+  color: @brown;
+  &:hover{
+    color: @brown-darken;
+  }
+  &:active{
+    color: @brown-transparent;
+  }
+}
+.blue-btn(){
+  color: @white;
+  background-color: @blue;
+  &:hover{
+    color: @white;
+    background-color: @blue-darken;
+  }
+  &:active{
+    color: @white-transparent;
+    background-color: @blue-dark;
+  }
+  &:disabled{
+    color: @white;
+    background-color: @gray;
+  }
+}
+.controls(){
+  background-color: @gray-lighten;
+  &:hover{
+    background-color: @gray;
+  }
+  &:active{
+    background-color: @gray-darken;
+  }
+}
