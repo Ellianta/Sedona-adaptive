@@ -31,7 +31,7 @@
          <div class="main-nav__toggle"></div>
          <div class="main-nav__toggle-close"></div>
        <div class="main-nav__inner">
-       <a class="main-nav__link  main-nav__link" href="#">Главная</a>
+       <a class="main-nav__link" href="index.html">Главная</a>
        <a class="main-nav__link" href="#">Фото и видео</a>
        <a class="main-nav__link  main-nav__link--center"></a>
        <a class="main-nav__link  main-nav__link--active" href="#">Форма отзыва</a>
@@ -56,7 +56,8 @@
         Помогите нашим отелям стать лучше! оставьте отзыв о них, а также о посещенных вами достопримечательностях
         </p>
       </section>
-      <section class="inner-page__feedback">
+
+      <article class="inner-page__feedback">
 
         <form class="feedback-form" method="post" action="#">
           <fieldset class="feedback-form__block  feedback-form__block--general">
@@ -83,11 +84,11 @@
             </legend>
             <label class="feedback-form__label">
               Имя:
-              <input class="feedback-form__text-field" type="text" name="name" value="" placeholder="Петр">
+              <input class="feedback-form__text-field" type="text" name="name" value="" placeholder="Петр *" required>
             </label>
             <label class="feedback-form__label">
               Фамилия:
-              <input class="feedback-form__text-field" type="text" name="surname" value="" placeholder="Иванов">
+              <input class="feedback-form__text-field" type="text" name="surname" value="" placeholder="Иванов *" required>
             </label>
             <label class="feedback-form__label">
               Отчество:
@@ -96,26 +97,32 @@
           </fieldset>
 
           <fieldset class="feedback-form__block  feedback-form__block--contacts">
-            <legend class="feedback-form__title  feedback-form__title--center">
-              Контактная информация:
+            <legend class="feedback-form__title  feedback-form__title--hr">
+              <b class="feedback-form__title-center">
+                Контактная информация:</b>
             </legend>
 
+            <div class="feedback-form__contacts-inner">
+
             <label class="feedback-form__label  feedback-form__label--contacts">
-              <span>Контактный телефон:</span>
-              <input class="feedback-form__number-field" type="tel" name="phone" value="" placeholder="Введите телефон">
-              <div class="feedback-form__invalid">Ошибка, перепроверьте номер</div>
+              <span><span class="hidden">Контактный</span> телефон:</span>
+              <input class="feedback-form__number-field" type="tel" name="phone" value="" placeholder="Введите телефон *" required>
+              <span class="feedback-form__invalid">Ошибка, перепроверьте номер</span>
             </label>
 
             <label class="feedback-form__label  feedback-form__label--contacts">
               <span>Электронная почта:</span>
-              <input class="feedback-form__mail-field" type="email" name="email" value="" placeholder="Введите e-mail">
-              <!-- <div class="feedback-form__invalid">Ошибка, неверный e-mail</div> -->
+              <input class="feedback-form__mail-field" type="email" name="email" value="" placeholder="Введите e-mail *" required>
+              <!-- <span class="feedback-form__invalid">Ошибка, неверный e-mail</span> -->
             </label>
+
+            </div>
           </fieldset>
 
           <fieldset class="feedback-form__block  feedback-form__block--visited">
-            <legend class="feedback-form__title  feedback-form__title--center">
-              Посещенные<br> достопримечательности:
+            <legend class="feedback-form__title  feedback-form__title--hr">
+              <b class="feedback-form__title-center">
+              Посещенные<br> достопримечательности:</b>
             </legend>
             <div class="feedback-form__block__inner">
             <input type="checkbox" class="feedback-form__input" id="checkbox1" name="check1" checked>
@@ -130,10 +137,11 @@
           </fieldset>
 
           <fieldset class="feedback-form__block  feedback-form__block--details">
-            <legend class="feedback-form__title  feedback-form__title--center">
-              Опишите свои эмоции:
+            <legend class="feedback-form__title  feedback-form__title--hr">
+              <b class="feedback-form__title-center">
+              Опишите свои эмоции:</b>
             </legend>
-              <textarea class="feedback-form__details-field" placeholder="Опишите подробно все свои восторги" value=""></textarea>
+              <textarea class="feedback-form__details-field" placeholder="Опишите подробно все свои восторги"></textarea>
           </fieldset>
 
           <button class="feedback-form__btn" type="submit">Отправить отзыв</button>
@@ -143,7 +151,23 @@
 
         </form>
 
-      </section>
+        <div class="failure">
+          <b class="failure__title">
+            Что-то пошло<br> не так!
+          </b>
+          <p class="failure__description">
+            Проверьте поля, выделенные красным, скорее всего вы забыли их заполнить
+          </p>
+          <button class="failure__btn">OK</button>
+        </div>
+
+        <div class="success">
+          <b class="success__title">
+            Ваш отзыв отправлен!
+          </b>
+        </div>
+
+      </article>
 
     </main>
 

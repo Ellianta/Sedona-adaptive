@@ -1,0 +1,50 @@
+.failure{
+  width: 400px;
+  height: 347px;
+  background-color: @white;
+  box-shadow: 0px 7px 15px 0px rgba(0, 1, 1, 0.15);
+  padding: 60px;
+  padding-bottom: 50px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 120px;
+  left: 50%;
+  margin-left: -200px;
+  z-index: 3;
+
+  &--show{
+    display: flex;
+  }
+
+  &__title{
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__description{
+    font-size: 14px;
+    line-height: 24px;
+    text-transform: uppercase;
+    text-align: center;
+    color: @gray-dark;
+  }
+
+  &__btn{
+    width: 272px;
+    height: 58px;
+    .blue-btn();
+    border: none;
+    outline: none;
+    font-size: 21px;
+    line-height: 26px;
+    font-weight: bold;
+    font-family: inherit;
+    cursor: pointer;
+  }
+}
