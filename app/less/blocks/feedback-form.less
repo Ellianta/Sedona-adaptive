@@ -1,0 +1,353 @@
+.feedback-form{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+   & input{
+     border: none;
+   }
+  //  -------стили для каждого блока------
+   &__block{
+     padding: 0;
+     margin: 0;
+     width: 100%;
+     min-height: 305px;
+     border-top: 1px solid @gray;
+     order: 10;
+     font-size: 14px;
+     line-height: 26px;
+     text-transform: uppercase;
+     border: none;
+
+     &--name{
+       order: 1;
+     }
+
+     &--contacts{
+       order: 2;
+       min-height: 315px;
+     }
+
+     &--general{
+       min-height: 288px;
+     }
+
+     &--visited{
+       min-height: 408px;
+     }
+
+     &--details{
+       min-height: 274px;
+     }
+   }
+  //  -------Заголовки--------------------
+   &__title{
+     font-size: 18px;
+     line-height: 26px;
+     text-transform: uppercase;
+     font-weight: bold;
+     text-align: center;
+     padding: 18px 0;
+   }
+  //---------стандарстные лейблы-----------
+   &__label{
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     align-items: center;
+     margin-bottom: 20px;
+
+     &--contacts{
+       flex-direction: column;
+       justify-content: flex-start;
+       align-items: flex-start;
+       margin-bottom: 12px;
+
+       & span{
+         padding-left: 20px;
+       }
+     }
+   }
+   //------стандартное текстовое поле----------
+   &__text-field{
+     flex-grow: 1;
+     height: 58px;
+     background-color: @gray-lighten;
+     margin-left: 17px;
+     padding-left: 22px;
+
+     &::placeholder{
+       font-size: 16px;
+       line-height: 26px;
+       font-weight: bold;
+       color: @black;
+     }
+   }
+  //  ---------телефон, мэйл------------
+   &__number-field,
+   &__mail-field{
+     width: 100%;
+     height: 58px;
+     background-color: @gray-lighten;
+     padding-left: 22px;
+     margin: 7px 0;
+
+     &::placeholder{
+       font-size: 16px;
+       line-height: 26px;
+       font-weight: bold;
+       color: @black;
+     }
+   }
+  //  -----строка ошибки--------
+   &__invalid{
+     font-size: 14px;
+     line-height: 22px;
+     text-transform: none;
+     color: @red;
+     padding-left: 20px;
+   }
+
+  //  ---Поле с радио кнопками-----
+   &__input{
+     display: none;
+   }
+
+   & #radio1:checked ~ .feedback-form__radio-check1::after,
+   & #radio2:checked ~ .feedback-form__radio-check2::after,
+   & #radio3:checked ~ .feedback-form__radio-check3::after{
+     background-color: @gray-dark;
+   }
+
+   &__radio-check{
+     position: relative;
+     display: block;
+     padding: 21px 0;
+     padding-left: 80px;
+     width: 100%;
+     height: 68px;
+     font-size: 18px;
+     line-height: 26px;
+     font-weight: bold;
+     color: @black;
+     text-transform: none;
+     cursor: pointer;
+
+      &::after{
+        content: "";
+        position: absolute;
+        top: 7px;
+        left: 0;
+        width: 23px;
+        height: 23px;
+        background-color: @gray-lighten;
+        border: 16px solid @gray-lighten;
+        border-radius: 50%;
+      }
+   }
+  //  ------поле с чекбоксами-------
+
+  &__check{
+    position: relative;
+    display: block;
+    padding: 15px 0;
+    padding-left: 80px;
+    margin-bottom: 25px;
+    width: 100%;
+    height: 55px;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: bold;
+    color: @black;
+    text-transform: none;
+    cursor: pointer;
+
+    &::after{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 55px;
+      height: 55px;
+      border-radius: 7px;
+      background-color: @gray-lighten;
+    }
+  }
+
+  & #checkbox1:checked ~ .feedback-form__check1::after,
+  & #checkbox2:checked ~ .feedback-form__check2::after,
+  & #checkbox3:checked ~ .feedback-form__check3::after,
+  & #checkbox4:checked ~ .feedback-form__check4::after{
+    background: @gray-lighten url("../img/icons/check.svg") no-repeat 50%;
+  }
+
+  //---------поле для отзыва-------
+  &__details-field{
+    width: 100%;
+    height: 160px;
+    background-color: @gray-lighten;
+    padding: 15px 20px;
+
+    &::placeholder{
+      font-size: 16px;
+      line-height: 26px;
+      font-weight: bold;
+      color: @black;
+    }
+  }
+   //-------кнопка-----------
+   &__btn{
+     order: 10;
+     width: 100%;
+     height: 58px;
+     margin-bottom: 35px;
+     font-family: inherit;
+     font-size: 21px;
+     line-height: 26px;
+     font-weight: bold;
+     text-transform: uppercase;
+     .blue-btn();
+     border: none;
+   }
+
+   &__required{
+     order: 10;
+     display: none;
+   }
+}
+
+@media @tablet{
+  .feedback-form{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &__block{
+      order: 1;
+
+      &--general{
+        width: 50%;
+        border-right: 1px solid @gray;
+        min-height: 368px;
+
+        & .feedback-form__title{
+          text-align: left;
+          margin-bottom: 35px;
+        }
+      }
+
+      &--name{
+        width: 265px;
+
+        & .feedback-form__title{
+          text-align: left;
+          margin-bottom: 42px;
+        }
+        & .feedback-form__title span{
+          display: none;
+        }
+      }
+
+      &--visited{
+        min-height: 300px;
+      }
+
+      &--visited .feedback-form__block__inner{
+        margin: 0 95px;
+        margin-right: 85px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: flex-start;
+      }
+
+      &--visited .feedback-form__title{
+         padding: 12px 0;
+         margin-bottom: 28px;
+      }
+
+      &--details{
+        min-height: 317px;
+      }
+
+      &--details .feedback-form__title{
+         margin-bottom: 38px;
+      }
+    }
+
+    &__title{
+      font-size: 21px;
+      line-height: 26px;
+
+      &--center{
+        position: relative;
+        overflow: hidden;
+      }
+    }
+
+   //  ---Поле с радио кнопками-----
+    &__radio-check{
+      margin-bottom: 10px;
+      padding-left: 75px;
+    }
+
+    //  ---------телефон, мэйл------------
+    &__label--contacts{
+      padding-top: 5px;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    &__number-field{
+      order: 2;
+    }
+
+    &__invalid{
+      order: 1;
+      line-height: 26px;
+    }
+
+    //  ------поле с чекбоксами-------
+    &__check{
+      width: 210px;
+      margin-bottom: 35px;
+    }
+
+    &__check1{
+      order: 1;
+    }
+
+    &__check2{
+      order: 3;
+    }
+
+    &__check3{
+      order: 2;
+    }
+
+    &__check4{
+      order: 4;
+    }
+
+    //-------кнопка-----------
+    &__btn{
+      width: 324px;
+      margin-bottom: 62px;
+    }
+
+    &__required{
+      display: block;
+      font-size: 14px;
+      line-height: 26px;
+      text-transform: uppercase;
+      padding: 20px 0;
+    }
+
+  }
+}

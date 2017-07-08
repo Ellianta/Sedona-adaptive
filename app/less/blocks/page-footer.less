@@ -1,11 +1,17 @@
 .page-footer{
   min-height: 243px;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
   text-transform: uppercase;
+  background-color: #fefefe;
+  &__inner{
+    min-height: 243px;
+    width: 280px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
   &__hashtag{
    padding: 38px 0 36px;
   }
@@ -35,20 +41,21 @@
    .page-footer{
      min-height: 120px;
      width: 100%;
-     padding: 0 55px;
-     flex-direction: row;
-     justify-content: space-between;
-     align-items: center;
-     position: relative;
+
+     &__inner{
+       width: 648px;
+       min-height: 120px;
+       flex-direction: row;
+       justify-content: space-between;
+       align-items: center;
+     }
 
      &__hashtag{
        padding: 0;
      }
 
      & .social{
-      position: absolute;
-      left: 50%;
-      margin-left: -75px;
+
      }
 
      &__developed{
@@ -60,6 +67,9 @@
 
 @media @desktop{
   .page-footer{
-    padding: 0 37px 0 132px;
+
+    &__inner{
+      width: 960px;
+    }
   }
 }

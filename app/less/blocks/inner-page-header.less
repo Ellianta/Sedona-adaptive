@@ -1,0 +1,53 @@
+.inner-page-header{
+  height: 214px;
+  width: 100%;
+  background: @white url("../img/back-inner.png") no-repeat 50%;
+  position: relative;
+
+  & .main-nav{
+    margin-bottom: 52px;
+  }
+
+  &__logo{
+    width: 229px;
+    height: 39px;
+    margin: 0 auto;
+  }
+
+  &__triangle{
+    position: absolute;
+    height: 57px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: url("../img/intro-triangle.svg") no-repeat center 0;
+  }
+}
+
+@media @tablet{
+  .inner-page-header{
+    height: 346px;
+
+    &__logo{
+      width: 461px;
+      height: 79px;
+    }
+
+    & .main-nav{
+      margin-bottom: 96px;
+    }
+
+  }
+
+}
+
+@media @desktop{
+  .inner-page-header{
+    height: 357px;
+  }
+
+  & .main-nav{
+    margin-bottom: 105px;
+  }
+
+}
