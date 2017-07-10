@@ -32,12 +32,14 @@
     background-color: @gray;
   }
 }
-.controls(){
+
+.fields(){
   background-color: @gray-lighten;
   &:hover{
     background-color: @gray;
   }
-  &:active{
-    background-color: @gray-darken;
+  &:focus{
+    background-color: @white;
+    border: 4px solid @gray;
   }
 }

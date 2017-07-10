@@ -1,6 +1,7 @@
 .inner-page{
   background-color: @white;
   padding-top: 40px;
+  padding-bottom: 98px;
 
    &__title{
      font-size: 18px;
@@ -28,6 +29,24 @@
      margin: 0 auto;
      position: relative;
    }
+
+   &__images{
+     width: 320px;
+     margin: 0 auto;
+     margin-top: 26px;
+     margin-bottom: 33px;
+   }
+
+   &__video{
+     width: 320px;
+     margin: 0 auto;
+     text-align: center;
+
+     & .inner-page__description{
+       width: 100%;
+       padding: 27px 30px 15px;
+     }
+   }
 }
 
 @media @tablet{
@@ -49,6 +68,23 @@
       width: 648px;
     }
 
+    &__images{
+      width: 768px;
+      padding: 0 60px;
+      margin-top: 69px;
+      margin-bottom: 68px;
+    }
+
+    &__video{
+      width: 768px;
+      margin-bottom: -58px;
+
+      & .inner-page__description{
+        width: 480px;
+        padding-top: 30px;
+      }
+    }
+
   }
 }
 
@@ -62,6 +98,21 @@
 
     &__description{
       margin-bottom: 42px;
+    }
+
+    &__images{
+      width: 1200px;
+      padding: 0;
+      margin-top: 74px;
+    }
+
+    &__video{
+      width: 800px;
+      margin-bottom: -15px;
+
+      & .inner-page__description{
+        padding-bottom: 30px;
+      }
     }
   }
 }

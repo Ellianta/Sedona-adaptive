@@ -1,0 +1,125 @@
+.image{
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 21px 20px;
+  padding-bottom: 18px;
+  border-top: 1px solid @gray;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 24px;
+
+  &:last-of-type{
+    border-bottom: 1px solid @gray;
+  }
+
+  &__picture{
+   margin-bottom: 8px;
+  }
+
+  &__info{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  &__title{
+    text-transform: uppercase;
+    display: block;
+  }
+
+  &__author{
+    margin-bottom: 8px;
+  }
+
+  &__likes{
+    margin-top: auto;
+    font-weight: bold;
+    padding-left: 37px;
+    width: 65px;
+    text-align: left;
+    background: url("../img/icons/like-icon.svg") no-repeat;
+    cursor: pointer;
+  }
+
+}
+
+@media @tablet{
+  .image{
+    padding: 0;
+    border: none;
+
+    &__inner{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+
+      & .image{
+        width: 50%;
+      }
+
+      & .image:nth-child(even) .image__info{
+        background-color: #eaeaea;
+      }
+
+    }
+
+    &__picture{
+      margin-bottom: -8px;
+    }
+
+    &__info{
+      height: 80px;
+      width: 100%;
+      padding: 0 20px;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      background-color: @gray-lighten;
+   }
+
+   &__likes{
+     margin: 0;
+     padding-left: 33px;
+   }
+ }
+}
+
+@media @desktop{
+  .image{
+    position: relative;
+    color: @white;
+
+    &__inner .image{
+      width: 400px;
+    }
+
+    &__inner{
+
+      & .image:nth-child(even) .image__info{
+        background-color: @black-transparent;
+      }
+    }
+
+
+    &__info{
+      position: absolute;
+      background-color: @black-transparent;
+      bottom: 0;
+    }
+
+    &__likes{
+      background-image: url("../img/icons/like-icon-white.svg");
+    }
+
+
+
+  }
+}

@@ -10,6 +10,8 @@ var del = require("del");
 var run = require("run-sequence");
 var svgmin = require("gulp-svgmin");
 var svgstore = require("gulp-svgstore");
+var postcss = require("gulp-postcss");
+var mqpacker = require("css-mqpacker");
 
 gulp.task("style", function() {
   gulp.src("app/less/style.less")
@@ -24,6 +26,11 @@ gulp.task("style", function() {
          "last 2 Edge versions"
       ]
     }))
+  .pipe(postcss([
+         mqpacker({
+           sort: true
+          })
+    ]))
   .pipe(gulp.dest("app/css"))
   .pipe(minify())
   .pipe(rename("style-min.css"))

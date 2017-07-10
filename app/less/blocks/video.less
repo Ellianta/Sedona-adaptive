@@ -1,0 +1,116 @@
+.video{
+  position: relative;
+  // margin-bottom: 98px;
+
+  &__control{
+    width: 280px;
+    height: 111px;
+    margin: 0 20px;
+    position: absolute;
+    bottom: -63px;
+  }
+
+  &__scale{
+    height: 45px;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    position: relative;
+  }
+
+  &__bar{
+    width: 235px;
+    height: 3px;
+    background-color: rgba(255,255,255,0.5);
+    margin: auto;
+  }
+
+  &__toggle{
+    position: absolute;
+    top: 50%;
+    margin-top: -5px;
+    left: 60px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: @white;
+    cursor: pointer;
+  }
+
+  &__btns{
+    height: 64px;
+    padding-left: 25px;
+    padding-right: 22px;
+    background-color: @gray-lighten;
+    display: flex;
+    flex-direction: row;
+    // justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__replay{
+    margin-right: auto;
+    cursor: pointer;
+  }
+
+  &__subtitles{
+    cursor: pointer;
+  }
+
+  &__fullscreen{
+    margin-left: 32px;
+    cursor: pointer;
+  }
+}
+
+@media @tablet{
+  .video{
+
+    &__control{
+      height: 93px;
+      width: 648px;
+      margin: 0 60px;
+      bottom: 0px;
+    }
+
+    &__scale{
+      height: 93px;
+      padding-right: 70px;
+      padding-left: 0;
+    }
+
+    &__bar{
+      width: 390px;
+    }
+
+    &__toggle{
+      left: 210px;
+    }
+
+    &__btns{
+      height: 93px;
+      position: absolute;
+      width: 100%;
+      background-color: transparent;
+      bottom: 0;
+      right: 0;
+      padding-right: 40px;
+      padding-left: 35px;
+    }
+
+  }
+}
+
+@media @desktop{
+   .video{
+
+    &__control{
+      width: 100%;
+      margin: 0;
+    }
+
+    &__bar{
+      width: 540px;
+    }
+
+   }
+}
